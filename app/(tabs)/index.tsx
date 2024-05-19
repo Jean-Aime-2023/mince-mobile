@@ -27,16 +27,14 @@ export default class index extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <SafeAreaView>
-          <ScrollView style={tw`mt-8`}>
+        <SafeAreaView style={tw`mt-12`}>
             {/* <Text style={[tw`text-[#fff]`]}>{this.state.screenText}</Text> */}
             {this.state.selectedIcon === 'home' && <Home/>}
             {this.state.selectedIcon === 'report' && <Report/>}
             {this.state.selectedIcon === 'account' && <Account/>}
-          </ScrollView>
         </SafeAreaView>
         <View style={styles.navContainer}>
-          <View style={[styles.navBar, tw`border border-gray-800 py-2`]}>
+          <View style={[styles.navBar, tw`p-3 px-5 border border-black/30`]}>
             <Pressable 
               onPress={() => this.changeText('home')} 
               style={[styles.IconBehave, this.state.selectedIcon === 'home' && styles.selectedIcon]} 
@@ -73,15 +71,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   navContainer: {
-    position: 'absolute',
-    alignItems: 'center',
-    bottom: 20,
+    // position: 'absolute',
+    // bottom: 20,
+    marginBottom:90,
+    marginTop:10
   },
   navBar: {
     flexDirection: 'row',
     backgroundColor: '#0A1027',
-    width: '90%',
-    justifyContent: 'space-evenly',
+    width: '95%',
+    justifyContent: 'space-between',
     borderRadius: 40,
     shadowColor: '#000',
     shadowOffset: { width: 10, height: 10 },
