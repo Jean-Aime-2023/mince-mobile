@@ -1,34 +1,55 @@
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import tw from 'twrnc';
 import services from '@/data/services';
 import transactions from '@/data/transactions';
-import { PoppinText } from '@/components/StyledText';
+import { PoppinText, PoppinsBold } from '@/components/StyledText';
+import cards from '@/data/cards';
+import { router } from 'expo-router';
 
 const home = () => {
   return (
     <ScrollView style={tw`mt-20`}>
       <View style={[styles.profileNav, tw`px-6`]}>
         <View style={styles.profileText}>
-          <PoppinText style={tw`text-[#6B6B6B] text-[15px]`}>Welcome</PoppinText>
-          <PoppinText style={tw`text-[#fff] text-[15px]`}>Ange Nadette</PoppinText>
+          <PoppinText style={tw`text-[#6B6B6B] text-[15px]`}>
+            Welcome
+          </PoppinText>
+          <PoppinText style={tw`text-[#fff] text-[15px]`}>
+            Ange Nadette
+          </PoppinText>
         </View>
-        <Ionicons
-          name="notifications"
-          color={'#fff'}
-          style={tw`relative`}
-          size={23}
-        />
+        <Pressable onPress={() => router.push('/notitfications')}>
+          <Ionicons
+            name="notifications"
+            color={'#fff'}
+            style={tw`relative`}
+            size={23}
+          />
+        </Pressable>
       </View>
-      <View style={tw`w-full py-10 pl-4`}>
-        <Image
-          source={require('@/assets/images/card.png')}
-          resizeMode="contain"
-        />
-      </View>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={tw`w-full py-10 px-7`}
+        contentContainerStyle={tw`flex-row gap-6`}
+      >
+        {cards.map((card) => (
+          <Image key={card.id} source={card.image} resizeMode="contain" />
+        ))}
+      </ScrollView>
       <View style={[styles.services, tw`px-6 flex-col gap-5`]}>
-        <PoppinText style={[tw`text-[#fff] text-[15px]`,styles.desc]}>Our Services</PoppinText>
+        <PoppinsBold style={[tw`text-[#fff] text-[15px]`, styles.desc]}>
+          Our Services
+        </PoppinsBold>
         <ScrollView
           horizontal
           style={tw`w-full`}
@@ -41,13 +62,17 @@ const home = () => {
               style={tw`border border-gray-700 p-5 justify-center items-center gap-2 rounded-[10px] w-[94px] h-[78px]`}
             >
               <Image source={service.image} resizeMode="contain" />
-              <PoppinText style={tw`text-[#fff] text-[12px]`}>{service.text}</PoppinText>
+              <PoppinText style={tw`text-[#fff] text-[12px]`}>
+                {service.text}
+              </PoppinText>
             </Pressable>
           ))}
         </ScrollView>
       </View>
       <View style={[styles.services, tw`px-6 flex-col gap-5 mt-10`]}>
-        <PoppinText style={[tw`text-[#fff]`,styles.desc]}>Recent Transactions</PoppinText>
+        <PoppinsBold style={[tw`text-[#fff] text-[15px]`, styles.desc]}>
+          Recent Transactions
+        </PoppinsBold>
         <View style={tw`gap-5`}>
           {transactions.map((transaction) => (
             <Pressable
