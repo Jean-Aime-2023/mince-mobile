@@ -32,6 +32,7 @@ export default function RootLayout() {
     MonoText:require('../assets/fonts/SpaceMono-Regular.ttf') ,
     PoppinsMain:require('../assets/fonts/Poppins-Regular.ttf') ,
     PoppinsSemibold:require('../assets/fonts/Poppins-SemiBold.ttf') ,
+    PoppinsBold:require('../assets/fonts/Poppins-Bold.ttf') ,
     NunitoMain:require('../assets/fonts/Nunito-Regular.ttf')
   });
 

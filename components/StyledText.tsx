@@ -15,4 +15,7 @@ export function NunitoText(props: TextProps) {
 export function PoppinsSemibold(props: TextProps) {
   return <Text {...props} style={[props.style, { fontFamily: 'PoppinsSemibold' }]} />;
 }
+export function PoppinsBold(props: TextProps) {
+  return <Text {...props} style={[props.style, { fontFamily: 'PoppinsBold' }]} />;
+}
 

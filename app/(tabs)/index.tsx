@@ -7,8 +7,6 @@ import Home from './Home'
 import Report from './Report'
 import Account from './Account'
 
-var iconHeight = 26;
-var iconWidth = 26;
 
 export default class index extends React.Component {
   state = {
@@ -71,8 +69,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   navContainer: {
-    // position: 'absolute',
-    // bottom: 20,
     marginBottom:90,
     marginTop:10
   },

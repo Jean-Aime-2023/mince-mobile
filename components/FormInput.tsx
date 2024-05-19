@@ -19,6 +19,7 @@ export default FormInput;
 const styles = StyleSheet.create({
   input: {
     padding: 5,
-    color: '#fff', // Set the default text color for TextInput
+    color: '#fff',
+    fontFamily:'Poppins'
   },
 });

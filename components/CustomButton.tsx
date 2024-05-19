@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import React from 'react';
 import tw from 'twrnc';
+import { PoppinText } from './StyledText';
 
 const CustomButton = ({ title ,icon , customStyles , customText , handlePress }: any) => {
   return (
@@ -11,7 +12,7 @@ const CustomButton = ({ title ,icon , customStyles , customText , handlePress }:
          resizeMode="contain"
          />
        }
-      <Text style={tw`${customText} text-center text-[15px]`}>{title}</Text>
+      <PoppinText style={tw`${customText} text-center text-[15px]`}>{title}</PoppinText>
     </TouchableOpacity>
   );
 };

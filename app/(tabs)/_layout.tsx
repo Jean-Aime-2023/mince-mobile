@@ -1,6 +1,8 @@
 import React from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import Notitfications from './notitfications'; 
+
 
 const AuthLayout = () => {
   return (
@@ -23,6 +25,12 @@ const AuthLayout = () => {
           name="Report"
           options={{
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Notitfications"
+          options={{
+            headerShown: false, 
           }}
         />
       </Stack>

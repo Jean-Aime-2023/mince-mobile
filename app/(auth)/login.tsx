@@ -13,6 +13,7 @@ import tw from 'twrnc';
 import FormInput from '@/components/FormInput';
 import CustomButton from '@/components/CustomButton';
 import { Link, router } from 'expo-router';
+import { PoppinText } from '@/components/StyledText';
 
 const Login = () => {
   return (
@@ -34,14 +35,14 @@ const Login = () => {
           <View style={[tw`w-full flex flex-col gap-8 px-6`]}>
             <FormInput placeholder={'Phone number, email , username'} />
             <FormInput placeholder={'Password'} />
-            <Text
+            <PoppinText
               style={[
                 tw`text-[#6B6B6B] text-[13px] pr-2`,
                 { textAlign: 'right' },
               ]}
             >
               Forgot Password? <Text style={tw`text-white`}>Click Here</Text>
-            </Text>
+            </PoppinText>
             <CustomButton
               title="Login"
               customStyles="bg-[#fff]"
@@ -54,14 +55,14 @@ const Login = () => {
               icon={require('@/assets/images/googleLogo.png')}
               customText="text-[#fff]"
             />
-            <Text
+            <PoppinText
               style={[tw`text-[#6B6B6B] text-[13px]`, { textAlign: 'center' }]}
             >
               Don’t have an account?{' '}
               <Link href="/register" style={tw`text-white`}>
                 Register here
               </Link>
-            </Text>
+            </PoppinText>
           </View>
         </View>
       </ScrollView>
