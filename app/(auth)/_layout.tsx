@@ -2,7 +2,7 @@ import React from 'react'
 import { Stack } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 
-const AuthLayout = () => {
+const _layout = () => {
   return (
     <>
      <Stack>
@@ -24,4 +24,4 @@ const AuthLayout = () => {
   )
 }
 
-export default AuthLayout
+export default _layout

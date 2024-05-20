@@ -1,21 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import tw from 'twrnc'
+import tw from 'twrnc';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Report = () => {
+const report = () => {
   return (
-    <View style={styles.container}>
-      <Text style={tw`text-[#fff]`}>Report ⁉️</Text>
-    </View>
+    <SafeAreaView style={[styles.container, tw`py-4`]}>
+      <ScrollView style={tw`relative`}>
+        <Text style={tw`text-[#fff]`}>Report ⁉️</Text>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
-export default Report;
+export default report;
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#0A1027',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
+

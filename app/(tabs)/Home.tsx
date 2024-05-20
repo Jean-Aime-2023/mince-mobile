@@ -14,10 +14,12 @@ import transactions from '@/data/transactions';
 import { PoppinText, PoppinsBold } from '@/components/StyledText';
 import cards from '@/data/cards';
 import { router } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const home = () => {
   return (
-    <ScrollView style={tw`mt-20`}>
+    <SafeAreaView style={[styles.container,tw`pt-8 pb-2`]}>
+      <ScrollView>
       <View style={[styles.profileNav, tw`px-6`]}>
         <View style={styles.profileText}>
           <PoppinText style={tw`text-[#6B6B6B] text-[15px]`}>
@@ -102,12 +104,17 @@ const home = () => {
         </View>
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 };
 
 export default home;
 
 const styles = StyleSheet.create({
+  container:{
+    backgroundColor: '#0A1027',
+    flex:1
+  },
   profileNav: {
     flexDirection: 'row',
     justifyContent: 'space-between',

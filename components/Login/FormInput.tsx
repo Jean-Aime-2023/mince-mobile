@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
   input: {
     padding: 5,
     color: '#fff',
-    fontFamily:'Poppins'
+    fontFamily:'PoppinsMain'
   },
 });

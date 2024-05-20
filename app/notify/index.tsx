@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
 
-const notitfications = () => {
+const index = () => {
   return (
     <View style={styles.container}>
     <Text style={tw`text-[#fff]`}>Notifications 👱🏼</Text>
@@ -10,7 +10,7 @@ const notitfications = () => {
   )
 }
 
-export default notitfications
+export default index
 
 const styles = StyleSheet.create({
     container: {

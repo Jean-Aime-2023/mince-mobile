@@ -9,7 +9,7 @@ import {
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import tw from 'twrnc';
-import FormInput from '@/components/FormInput';
+import FormInput from '@/components/Login/FormInput';
 import CustomButton from '@/components/CustomButton';
 import { Link } from 'expo-router';
 
@@ -39,12 +39,12 @@ const Register = () => {
             </View>
             <CustomButton
               title="Create account"
-              customStyles="bg-[#fff]"
+              customStyles="bg-[#fff] w-full"
               customText="text-[#0A1027]"
             />
             <CustomButton
               title="Continue With Google"
-              customStyles="bg-transparent border-2 border-gray-700"
+              customStyles="bg-transparent border-2 border-gray-700 w-full"
               icon={require('@/assets/images/googleLogo.png')}
               customText="text-[#fff]"
             />
