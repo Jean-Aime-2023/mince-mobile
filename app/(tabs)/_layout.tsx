@@ -54,9 +54,10 @@ const _layout = () => {
   useEffect(()=>{
     const listener = EventRegister.addEventListener('ChangeTheme',(data)=>{
       setDarkMode(data)
+      console.log(data)
     })
     return()=>{
-      EventRegister.removeAllListeners(listener);
+      EventRegister.removeAllListeners();
     }
   },[darkMode])
   return (
