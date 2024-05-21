@@ -59,7 +59,7 @@ const Login = () => {
             >
               Don’t have an account?{' '}
               <Link href="/register" style={tw`text-white`}>
-                Register here
+                <Text>Register here</Text>
               </Link>
             </PoppinText>
           </View>

@@ -11,7 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import tw from 'twrnc';
 import services from '@/data/services';
 import transactions from '@/data/transactions';
-import { PoppinText, PoppinsBold } from '@/components/StyledText';
+import { PoppinText, PoppinsBold, PoppinsSemibold } from '@/components/StyledText';
 import cards from '@/data/cards';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -29,7 +29,7 @@ const home = () => {
             Ange Nadette
           </PoppinText>
         </View>
-        <Pressable onPress={() => router.push('/notitfications')}>
+        <Pressable onPress={() => router.push('/notify')}>
           <Ionicons
             name="notifications"
             color={'#fff'}
@@ -41,7 +41,7 @@ const home = () => {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        style={tw`w-full py-10 px-7`}
+        style={tw`w-full py-10 px-4`}
         contentContainerStyle={tw`flex-row gap-6`}
       >
         {cards.map((card) => (
@@ -49,13 +49,13 @@ const home = () => {
         ))}
       </ScrollView>
       <View style={[styles.services, tw`px-6 flex-col gap-5`]}>
-        <PoppinsBold style={[tw`text-[#fff] text-[15px]`, styles.desc]}>
+        <PoppinsSemibold style={[tw`text-[#fff] text-[17px]`, styles.desc]}>
           Our Services
-        </PoppinsBold>
+        </PoppinsSemibold>
         <ScrollView
           horizontal
           style={tw`w-full`}
-          contentContainerStyle={tw`grid grid-cols-4 gap-5`}
+          contentContainerStyle={tw`flex-row gap-6`}
           showsHorizontalScrollIndicator={false}
         >
           {services.map((service) => (
@@ -72,9 +72,9 @@ const home = () => {
         </ScrollView>
       </View>
       <View style={[styles.services, tw`px-6 flex-col gap-5 mt-10`]}>
-        <PoppinsBold style={[tw`text-[#fff] text-[15px]`, styles.desc]}>
+        <PoppinsSemibold style={[tw`text-[#fff] text-[17px]`, styles.desc]}>
           Recent Transactions
-        </PoppinsBold>
+        </PoppinsSemibold>
         <View style={tw`gap-5`}>
           {transactions.map((transaction) => (
             <Pressable

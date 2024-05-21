@@ -1,8 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { View } from './Themed'
 import { PoppinText } from './StyledText'
 import { MaterialIcons } from '@expo/vector-icons'
+import tw from 'twrnc'
 
 const Radio = ({options,checkedValue,onChange,style}:any) => {
   return (
@@ -10,7 +10,7 @@ const Radio = ({options,checkedValue,onChange,style}:any) => {
       {options.map((option:any)=>{
         let active = checkedValue == option.value;
         return (
-            <TouchableOpacity style={active ? [styles.radio,styles.activeRadio] : styles.radio} onPress={()=>{
+            <Pressable style={active ? [styles.radio,styles.activeRadio] : [styles.radio,tw`border-2 border-gray-700`]} onPress={()=>{
                 onChange(option.value)
             }}
             key={option.value} 
@@ -18,10 +18,10 @@ const Radio = ({options,checkedValue,onChange,style}:any) => {
                 <MaterialIcons
                  name={active ? "radio-button-checked" : "radio-button-unchecked"}
                  size={24}
-                 color='#64748b'
+                 color={active ? "#0A1027" : "#fff"}
                 />
                 <PoppinText style={active ? [styles.text,styles.activeText] : styles.text}>{option.label}</PoppinText>
-            </TouchableOpacity>
+            </Pressable>
         )
       })}
     </View>
@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         alignItems:"center",
         marginBottom:10,
-        backgroundColor:"#f3f4f6",
+        backgroundColor:"transparent",
         paddingHorizontal:15,
         borderRadius:15,
     },
     activeRadio:{
-        backgroundColor:"#06b6d4" + "11",
+        backgroundColor:"#fff",
     },
     text:{
         fontSize:16,
