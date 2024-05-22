@@ -15,13 +15,14 @@ import CustomButton from '@/components/CustomButton';
 import EditProfile from '@/data/EditProfile';
 import { Ionicons } from '@expo/vector-icons';
 import { EventRegister } from 'react-native-event-listeners'
+import { router } from 'expo-router';
 
 const account = () => {
   const [darkMode,setDarkMode] = useState(false)
   return (
     <SafeAreaView style={[styles.container, tw`py-4`]}>
       <ScrollView style={tw`relative`}>
-        <Pressable style={tw`absolute right-6 top-3`}>
+        <Pressable onPress={() => router.push('/login')} style={tw`absolute right-6 top-3`}>
           <Ionicons name="log-in-outline" size={30} color={'#fff'} />
         </Pressable>
         <View style={tw`flex flex-col justify-center items-center gap-10 px-6`}>

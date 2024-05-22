@@ -29,10 +29,11 @@ const home = () => {
             Ange Nadette
           </PoppinText>
         </View>
-        <Pressable onPress={() => router.push('/notify')}>
+        <Pressable style={tw`relative`} onPress={() => router.push('/notify')}>
+          <Image source={require('@/assets/images/notifDot.png')} resizeMode='contain' style={tw`absolute right-0 top-0 z-10`} />
           <Ionicons
-            name="notifications"
-            color={'#fff'}
+            name="notifications-outline"
+            color={'#6B6B6B'}
             style={tw`relative`}
             size={23}
           />
@@ -45,7 +46,7 @@ const home = () => {
         contentContainerStyle={tw`flex-row gap-6`}
       >
         {cards.map((card) => (
-          <Image key={card.id} source={card.image} resizeMode="contain" />
+          <Image key={card.id} source={card.image} resizeMode="contain" style={tw`w-[300px] h-[180px]`} />
         ))}
       </ScrollView>
       <View style={[styles.services, tw`px-6 flex-col gap-5`]}>
@@ -132,4 +133,8 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 15,
   },
+  image:{
+    width:"100%",
+    height:"100%"
+  }
 });
