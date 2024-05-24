@@ -4,7 +4,7 @@ import data from '@/data/slides';
 import OnboardingItem from '@/components/Onboard/OnboardingItem';
 import { router } from 'expo-router';
 
-const Onboarding = () => {
+const index = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slideRef = useRef<FlatList<any>>(null);
@@ -54,7 +54,7 @@ const Onboarding = () => {
   );
 };
 
-export default Onboarding;
+export default index;
 
 const styles = StyleSheet.create({
   container: {

@@ -34,7 +34,6 @@ const index = () => {
           </View>
           <Pressable
             style={tw`flex flex-row items-center gap-2`}
-            onPress={() => router.push('/notify')}
           >
             <PoppinText style={tw`text-[#fff] text-[14px]`}>
               Mark all as read
