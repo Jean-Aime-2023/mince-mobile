@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import data from '@/data/slides';
 import OnboardingItem from '@/components/Onboard/OnboardingItem';
 import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 
 const index = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,6 +51,7 @@ const index = () => {
         viewabilityConfig={viewConfig}
         ref={slideRef}
       />
+      <StatusBar backgroundColor='transparent' style='light' />
     </View>
   );
 };

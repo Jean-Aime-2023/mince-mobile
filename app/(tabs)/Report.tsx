@@ -70,7 +70,7 @@ const report = () => {
                 color={'#fff'}
               />
             }
-            customStyles="border-2 border-gray-700 bg-transparent my-6 w-[130px] text-[15px] flex-end"
+            customStyles="border-2 border-gray-700 bg-transparent my-6 w-[130px] text-[15px]"
             customText="text-white"
           />
         </View>
